@@ -21,18 +21,8 @@ const useCategoriesData = () => {
 }
 
 export const ListOfCategories = () => {
-  // const [categories, setCategories] = useState([])
   const { categories, loading } = useCategoriesData()
   const [showFixed, setShowFixed] = useState(false)
-  // const API = 'https://petgramserver-9na7gnxdl-effrenanthony.vercel.app/categories'
-
-  // useEffect(() => {
-  //   window.fetch(API)
-  //     .then(res => res.json())
-  //     .then(response => {
-  //       setCategories(response)
-  //     })
-  // }, [])
 
   useEffect(() => {
     const onScroll = e => {
