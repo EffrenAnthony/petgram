@@ -7,8 +7,11 @@ export function useAuthContext () {
 }
 
 export function AuthProvider ({ children }) {
-  const [isAuth, setIsAuth] = useState(false)
-  function activateUser () {
+  const [isAuth, setIsAuth] = useState(() => {
+    return window.sessionStorage.getItem('token')
+  })
+  function activateUser (token) {
+    window.sessionStorage.setItem('token', token)
     return setIsAuth(!isAuth)
   }
 
