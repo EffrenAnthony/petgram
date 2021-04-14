@@ -3,10 +3,10 @@ import { useQuery } from '@apollo/client'
 import { PhotoCard } from '../PhotoCard'
 import { GET_PHOTO } from '../../hoc/withPhotos'
 
-export const ListOfPhotoCards = () => {
+export const ListOfPhotoCards = ({ categoryId }) => {
   const { loading, error, data } = useQuery(GET_PHOTO, {
     variables: {
-      categoryId: 1
+      categoryId: categoryId
     }
   })
 
