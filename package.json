@@ -9,8 +9,10 @@
     "graphql": "^15.5.0",
     "html-webpack-plugin": "^5.3.1",
     "intersection-observer": "^0.12.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "styled-components": "^5.2.3",
     "webpack": "^5.30.0",
@@ -34,15 +36,19 @@
     "@babel/preset-react": "^7.13.13",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
+    "cypress": "^7.1.0",
     "standard": "^16.0.3",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-pwa-manifest": "^4.3.0",
+    "workbox-webpack-plugin": "^6.1.5"
   },
   "scripts": {
     "build": "webpack",
     "lint": "standard",
     "vercel-build": "npm run build",
     "dev": "webpack-cli serve --mode development --history-api-fallback",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress open",
+    "serve:dev": "webpack --mode 'development' && npx serve dist -s"
   },
   "repository": {
     "type": "git",

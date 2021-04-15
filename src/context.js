@@ -14,10 +14,15 @@ export function AuthProvider ({ children }) {
     window.sessionStorage.setItem('token', token)
     return setIsAuth(!isAuth)
   }
+  function removeAuth () {
+    window.sessionStorage.removeItem('token')
+    return setIsAuth(false)
+  }
 
   const value = {
     isAuth,
-    activateUser
+    activateUser,
+    removeAuth
   }
 
   return (
